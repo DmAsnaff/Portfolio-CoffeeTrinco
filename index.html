@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Trinco</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div class="header" id="home">
+        <nav id="navbar">
+            <a href="#home" class="logo">Coffee Trinco <i class="fas fa-mug-hot"></i></a>
+            <div class="links" id="nav">
+                <a href="#home">Home</a>
+                <a href="#about">About Us</a>
+                <a href="#product">Products</a>
+                <a href="#team">Our Team</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="fas fa-bars" id="menu-btn" onclick="openmenu()"></div>
+            <div class="fa-solid fa-xmark" id="close" onclick="closemenu()"></div>
+        </nav>
+        <div class="content">
+            <h3>Sri Lanka's NO. 1</h3>
+            <h1>Experience the Ceylon's <br>Coffee Heritage</h1>
+            <button class="btn">Try Now</button>
+        </div>
+    </div>
+
+    <section class="about" id="about">
+        <div class="container">
+            <div class="image">
+                                              
+            </div>
+            <div class="about-content">
+                <h1>About Us </h1>
+                <h3>Discover the Essence of Sri Lankan Coffee</h3>
+                <p>At Coffee Trinco, we're passionate about sharing the rich flavors and cultural heritage of Sri Lanka's coffee. 
+                    From the misty highlands to our meticulous roasting, 
+                    we craft exceptional coffee that captures the essence of our remarkable terroir. 
+                    Our dedicated baristas ensure every cup is prepared with precision and care. 
+                    Join us to indulge in our signature blends, explore single-origin offerings, 
+                    and experience the true taste of Ceylon's coffee.
+                </p>
+            </div>
+        </div>
+    </section>
+   
+    <section class="product" id="product">
+        <h1 class="heading">~Trendy<span> Coffee~</span></h1>
+        <p class="heading-description">At Coffee Trinco, we are passionate about delivering exceptional coffee products that inspire and delight. </p>
+        <div class="container">
+            <div class="product-box">
+                <div class="product-img">
+                    <img src="img/menu-1.png" alt="">
+                </div>
+                <div class="product-content">
+                    <h3>Espresso</h3>
+                    <p align="justify">A concentrated coffee beverage brewed by forcing hot water under high pressure 
+                        through finely ground coffee beans. 
+                        It forms the base for many other coffee drinks.</p>
+                </div>
+            </div>
+            <div class="product-box">
+                <div class="product-img">
+                    <img src="img/menu-2.png" alt="">
+                </div>
+                <div class="product-content">
+                    <h3>Cappuccino</h3>
+                    <p align="justify">Equal parts espresso, steamed milk, and milk foam, 
+                        creating a balanced and creamy coffee beverage.</p>
+                </div>
+            </div>
+            <div class="product-box">
+                <div class="product-img">
+                    <img src="img/menu-3.png" alt="">
+                </div>
+                <div class="product-content">
+                    <h3>Latte</h3>
+                    <p align="justify">Espresso combined with steamed milk, topped with a small layer of milk foam. It has a smooth and creamy texture.</p>
+                </div>
+            </div>
+            <div class="product-box">
+                <div class="product-img">
+                    <img src="img/menu-4.png" alt="">
+                </div>
+                <div class="product-content">
+                    <h3>Americano</h3>
+                    <p align="justify">A shot or two of espresso diluted with hot water, resembling the strength of traditional brewed coffee.</p>
+                </div>
+            </div>
+            <div class="product-box">
+                <div class="product-img">
+                    <img src="img/menu-5.png" alt="">
+                </div>
+                <div class="product-content">
+                    <h3>Macchiato</h3>
+                    <p align="justify">An espresso shot "stained" with a small amount of steamed milk or milk foam. 
+                        It provides a bolder and more concentrated flavor compared to a latte or cappuccino.</p>
+                </div>
+            </div>
+            <div class="product-box">
+                <div class="product-img">
+                    <img src="img/menu-6.png" alt="">
+                </div>
+                <div class="product-content">
+                    <h3>Mocha</h3>
+                    <p align="justify">A delightful blend of espresso, steamed milk, chocolate syrup, and topped with whipped cream. 
+                        It offers a rich and indulgent flavor.</p>
+                </div>
+            </div>
+        </div>
+      </section>
+
+      <div class="slider">
+        <div class="slides">
+          <img src="img/image1.jpg" alt="Image 1">
+          <img src="img/image2.jpg" alt="Image 2">
+          <img src="img/image3.jpg" alt="Image 3">
+        </div>
+        <button class="prev">Previous</button>
+        <button class="next">Next</button>
+      </div>
+      <script>
+        const slider = document.querySelector('.slider');
+        const slides = slider.querySelector('.slides');
+        const prevBtn = slider.querySelector('.prev');
+        const nextBtn = slider.querySelector('.next');
+        
+        let slideIndex = 0;
+        const slideCount = slides.children.length;
+        
+        function showSlide(index) {
+          slides.style.transform = `translateX(-${index * 100}%)`;
+        }
+        
+        function nextSlide() {
+          slideIndex = (slideIndex + 1) % slideCount;
+          showSlide(slideIndex);
+        }
+        
+        function prevSlide() {
+          slideIndex = (slideIndex - 1 + slideCount) % slideCount;
+          showSlide(slideIndex);
+        }
+        
+        prevBtn.addEventListener('click', prevSlide);
+        nextBtn.addEventListener('click', nextSlide);
+        
+        function startSlider() {
+          setInterval(nextSlide, 2000);
+        }
+        
+        startSlider();
+        </script>
+   
+    <section class="team" id="team">
+        <h1 class="heading"> Our <span>Team</span></h1>
+        <p class="heading-description"> "Together, we create coffee moments that inspire."</p>
+        <div class="container">
+            <div class="team-box">
+                <div class="team-img">
+                    <img src="img/pic-1.png" alt="">
+                </div>
+                <div class="team-content">
+                    <h3>Mohamed Asnaff</h3>
+                    <p>Founder</p>
+                    <div class="social">
+                        <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com"target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.whatsapp.com"target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-box">
+                <div class="team-img">
+                    <img src="img/pic-2.png" alt="">
+                </div>
+                <div class="team-content">
+                    <h3>Mohamed Nashath</h3>
+                    <p>Manager</p>
+                    <div class="social">
+                        <a href="https://www.facebook.com"target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com"target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.whatsapp.com"target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-box">
+                <div class="team-img">
+                    <img src="img/pic-3.png" alt="">
+                </div>
+                <div class="team-content">
+                    <h3>Akhlaq Hussain</h3>
+                    <p>Barista</p>
+                    <div class="social">
+                        <a href="https://www.facebook.com"target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com"target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.whatsapp.com"target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h1 class="heading">Contact <span>Us</span></h1>
+        <p class="heading-description">We are always here for you...</p>
+        <div class="container">
+            <div class="contact-box">
+                <div>
+                    <i class="fa-solid fa-envelope"></i>
+                    <h2>Email address <br> <span>Mail us to...</span></h2>
+                </div>
+                <div>
+                    <p>mail2asnaff@gmail.com</p>
+                    <i class="fa-solid fa-right-long"></i>
+                </div>
+            </div>
+            <div class="contact-box">
+                <div>
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h2>Address <br> <span>Find Us at...</span></h2>
+                </div>
+                <div>
+                    <p>No 58, Peruntheru, Kinniya 05.</p>
+                    <i class="fa-solid fa-right-long"></i>
+                </div>
+            </div>
+            <div class="contact-box">
+                <div>
+                    <i class="fa-solid fa-phone"></i>
+                    <h2>Call Us <br> <span>Call us to...</span></h2>
+                </div>
+                <div>
+                    <p>+94 773434253</p>
+                    <i class="fa-solid fa-right-long"></i>
+                </div>
+            </div>
+        </div>
+        <button class="Additional-info-btn" onclick="toggleAdditionalInfo()">Toggle for more.</button>
+  
+  <div id="additional-info" class="additional-info">
+    <h2>Branches to be open soon</h2>
+    <div class="container">
+        <div class="contact-box">
+            <div>
+                <i class="fa-solid fa-location-dot"></i>
+                <h2>Address <br> <span>Soon at...</span></h2>
+            </div>
+            <div>
+                <p>No 100, Mainstreet, TrincoTown</p>
+                <i class="fa-solid fa-right-long"></i>
+            </div>
+        </div>
+        <div class="contact-box">
+            <div>
+                <i class="fa-solid fa-location-dot"></i>
+                <h2>Address <br> <span>Soon at...</span></h2>
+            </div>
+            <div>
+                <p>No 15/2, Pettah Road, Colombo.</p>
+                <i class="fa-solid fa-right-long"></i>
+            </div>
+        </div>
+    </div>
+   
+  </div>
+    </section>
+
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          margin: 20px;
+          
+        }
+    
+        h2 {
+          margin-bottom: 20px;
+        }
+    
+        form {
+          width: 300px;
+          
+        }
+    
+        label {
+          display: block;
+          margin-bottom: 5px;
+          font-weight: bold;
+        }
+    
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"] {
+          width: 100%;
+          padding: 5px;
+          margin-bottom: 10px;
+          border-radius: 3px;
+          border: 1px solid #ccc;
+        }
+    
+        input[type="submit"] {
+          background-color: #4CAF50;
+          color: white;
+          padding: 10px 15px;
+          border: none;
+          border-radius: 3px;
+          cursor: pointer;
+        }
+    
+        .error {
+          color: red;
+          font-size: 12px;
+          margin-top: 5px;
+        }
+      </style>
+    </head>
+    <body>
+      <h2>Contact Form</h2>
+      <form id="contactForm" onsubmit="validateForm(event)">
+        <div>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+          <label for="phone">Phone:</label>
+          <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div>
+          <input type="submit" value="Submit">
+        </div>
+      </form>
+    
+  
+
+    <section class="footer">
+
+
+        <div class="container">
+            <div class="footer-box">
+                <h3>about us </h3>
+                <p align="justify">Located in Kinniya Trincomalee, Coffee Trinco is a world for coffee lovers. 
+                    With our carefully sourced beans and expertly crafted beverages, 
+                    we bring the finest coffee experience to this vibrant town. Step into our warm and inviting space, 
+                    where skilled baristas await to serve you exceptional coffee. 
+                    Experience the magic of Coffee Trinco in Kinniya Trincomalee, 
+                    where passion and community blend to create an unforgettable coffee journey.</p>
+                <p>Copyrights &copy; 2023 All rights reserved By <a>Coffee Trinco <i class="fas fa-mug-hot"></i></a></p>
+
+            </div>
+            
+            <div style="position:relative; left:300px;" class="footer-box">
+                <h3>Follow Us</h3>
+                <p>Connect With Us On:</p>
+                <div>
+                    <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com"target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.whatsapp.com"target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
